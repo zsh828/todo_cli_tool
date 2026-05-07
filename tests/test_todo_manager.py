@@ -1,7 +1,12 @@
+import sys
 import os
+
+# 将项目根目录添加到 sys.path，以便能够导入 src 包
+# tests 目录在项目根目录下，所以父目录就是项目根目录
+sys.path.insert(0, os.path.abspath(os.path.join(os.path.dirname(__file__), '..')))
+
 import pytest
 import tempfile
-import json
 from src.todo_manager import TodoManager
 
 
